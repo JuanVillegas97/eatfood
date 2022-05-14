@@ -4,24 +4,29 @@ var app = new Vue({
     sections: [
       {
         id: 1,
-        name: 'Menu',
+        name: 'Home',
         visible: true,
       },
       {
         id: 2,
-        name: 'Mi Cuenta',
+        name: 'Menu',
         visible: false,
       },
       {
         id: 3,
-        name: 'Mi carrito',
+        name: 'Mi Cuenta',
         visible: false,
       },
       {
         id: 4,
-        name: 'Quienes Somos',
+        name: 'Mi carrito',
         visible: false,
       },
+      {
+        id: 5,
+        name: 'Quienes Somos',
+        visible: false,
+      }
     ],
   },
   methods: {
