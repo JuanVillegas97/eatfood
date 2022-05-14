@@ -1,0 +1,42 @@
+#row-1-about-us {
+  background-color: #ffb84d;
+  text-align: center;
+}
+
+#row-3-about-us {
+  background-color: #ffb84d;
+}
+
+#navbar {
+  background-color: #ffad33;
+  color: white;
+}
+
+#title-aboutus {
+  color: #804d00;
+  opacity: 0.6;
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: bold;
+}
+
+#text-aboutus {
+  color: white;
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: bold;
+
+  font-style: oblique;
+}
+
+#text-aboutusBLACK {
+  color: black;
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: bold;
+
+  font-style: oblique;
+}
+
+#logo {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}

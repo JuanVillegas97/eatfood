@@ -9,7 +9,7 @@ var app = new Vue({
       },
       {
         id: 2,
-        name: 'MiCuenta',
+        name: 'Mi Cuenta',
         visible: false,
       },
       {
@@ -19,7 +19,7 @@ var app = new Vue({
       },
       {
         id: 4,
-        name: 'QuienesSomos',
+        name: 'Quienes Somos',
         visible: false,
       },
     ],
