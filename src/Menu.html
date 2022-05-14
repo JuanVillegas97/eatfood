@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>EatFood</title>
+    <!--*bootstrap-->
+    <link rel="stylesheet" href="style.css" />
+    <!--*bootstrap-->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+    <!--*VUE-->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <!--*Container of the whole page-->
+      <div class="container-fluid">
+        <!--*FIRST ROW-->
+        <div class="row" style="min-height: 10vh">
+          <nav class="navbar navbar-expand-lg navbar-light" id="navbar">
+            <a class="navbar-brand">EATFOOD</a>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav mr-auto">
+                <li
+                  class="nav-item active"
+                  v-for="section in sections"
+                  :key="section.id"
+                >
+                  <h4 class="px-4" v-on:click="show(section.id)">
+                    {{ section.name }}
+                  </h4>
+                </li>
+              </ul>
+            </div>
+          </nav>
+        </div>
+        <!--*SECOND ROW-->
+        <!--!HERE SELECT YOUR DIV-->
+        <div
+          class="row bg-secondary"
+          style="min-height: 90vh"
+          v-if="sections[0].visible===true"
+        >
+          sadasd
+        </div>
+        <div
+          class="row bg-primary"
+          style="min-height: 90vh"
+          v-if="sections[1].visible===true"
+        >
+          sadasd
+        </div>
+        <div
+          class="row bg-danger"
+          style="min-height: 90vh"
+          v-if="sections[2].visible===true"
+        >
+          sadasd
+        </div>
+        <div
+          class="row"
+          style="min-height: 90vh"
+          v-if="sections[3].visible===true"
+        >
+          <div class="row" style="min-height: 20vh" id="row-1-about-us">
+            <h1 class="pt-3" id="title-aboutus">EATFOOD</h1>
+            <h4 class="pb-3" id="text-aboutus">Bringing Joy of Food</h4>
+          </div>
+          <div class="row" style="min-height: 40vh">
+            <div class="col"></div>
+            <div class="col">
+              <h5 class="p-5" id="text-aboutusBLACK">
+                EATFOOD, we believe there is a better way to recive your food. A
+                more valuable, less invasive way where customers are eraned
+                rather than bought. We are obsessively passionate about it and
+                our mission is to help people to achieve it. We focus on search
+                engine optimization to find the best way to deliver your food.
+                We are excited to simplify the way of bringing food to you
+                trough our web page adn make a better community.
+              </h5>
+            </div>
+            <div class="col"></div>
+          </div>
+          <div class="row" style="min-height: 40vh" id="row-3-about-us">
+            <div class="col align-content-center">
+              <br />
+              <br />
+              <img
+                style="border-radius: 50%"
+                src="https://static-s.aa-cdn.net/img/ios/566347057/16872b5725a119fce8722bd8158d98b1?v=1"
+                class="img-fluid"
+                alt="Responsive image"
+                id="logo"
+              />
+            </div>
+            <div class="col">
+              <br />
+              <h1 id="title-aboutus">Our starting</h1>
+              <br />
+              <h5 id="text-aboutus">
+                EATDFOOD, was founded by a team of 4 during a school project in
+                2022. It started as personal webpage with the finality to prove
+                our skills in the front and back end. The main idea was born due
+                the pandemic, at the time many restaurants have chosen to have a
+                business model focused on e-commerce and using delivery services
+                such as Uber Eats and Rappi. That is why our team decided that
+                creating this web page ordering food at home is done almost
+                entirely through apps or websites that allow you to do that,
+                they are very easy and practical, in them you can have a catalog
+                of all the restaurants available and there is no need to call or
+                look for the menu of each place. Thanks to this, food ordering
+                websites have become very popular. We saw an area of opportunity
+                to be able to compete in a new market with a lot of demand.
+              </h5>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--*Vue js-->
+    <script src="index.js"></script>
+  </body>
+</html>
