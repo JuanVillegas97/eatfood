@@ -1,6 +1,7 @@
 var app = new Vue({
   el: '#app',
   data: {
+    img: [],
     sections: [
       {
         id: 1,
@@ -34,9 +35,20 @@ var app = new Vue({
           section.visible = false
         }
       })
-      this.sections.forEach((section) => {
-        console.log(section.id + ' ' + section.visible)
-      })
+    },
+    getFood: function () {
+      fetch(' https://spoonacular.com/recipeImages/')
+        .then((res) => {
+          return res.json()
+        })
+        .then((data) => {
+          this.img = data
+        })
+        .catch((err) => {
+          console.log(err)
+        })
+
+      console.log(this.img)
     },
   },
 })
