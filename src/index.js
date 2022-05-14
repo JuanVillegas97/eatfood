@@ -28,6 +28,29 @@ var app = new Vue({
         visible: false,
       }
     ],
+    foods: [
+      {
+        id: 1,
+        text: 'Burger',
+        img: 'https://cloudfront-us-east-1.images.arcpublishing.com/infobae/V2H33FRBZBB6FDSJLP2IDHLQYA.jpg',
+      },
+      {
+        id: 2,
+        text: 'Pizza',
+        img: 'https://w6h5a5r4.rocketcdn.me/wp-content/uploads/2019/06/pizza-con-chorizo-jamon-y-queso-1080x671.jpg',
+      },
+      {
+        id: 3,
+        text: 'Sushi',
+        img: 'https://www.eltiempo.com/files/image_640_428/uploads/2020/06/17/5eeac3162ff67.png',
+      },
+    ],
+    items: [
+      {
+        id: -1,
+        text: '',
+      },
+    ],
   },
   methods: {
     // Creating function
@@ -41,6 +64,11 @@ var app = new Vue({
       })
       this.sections.forEach((section) => {
         console.log(section.id + ' ' + section.visible)
+      })
+    },
+    addCarrito: function (text) {
+      this.items.push({
+        text: text,
       })
     },
   },
