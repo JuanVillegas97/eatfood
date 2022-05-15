@@ -13,6 +13,7 @@
     />
     <!--*VUE-->
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+		    <script src="https://unpkg.com/vue/dist/vue.js"></script>
   </head>
   <body>
     <div id="app">
@@ -118,11 +119,20 @@
         </div>
         </div>
         <div
-          class="row bg-danger"
+          class="rounded"
           style="min-height: 90vh"
           v-if="sections[2].visible===true"
         >
-        <h1> asdas</h1>
+        <h1> Mi cuenta</h1>
+				<h4> Bienvenido</h4>
+					
+		<ul id="cuentas" >
+		<h4></h4>
+  <li v-for="value in object">
+    {{ value }}
+  </li>
+</ul>
+					
         </div>
         <div
         class="header"
