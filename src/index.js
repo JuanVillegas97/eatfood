@@ -60,7 +60,7 @@ class Cuenta { constructor(ID,Nombre,Contraseña,Fecha,Dinero,desc1) {
 							
 }
 
-let C1 = new Cuenta(1,'Luis',1234,2021,1000,'N/A');
+const C1 = new Cuenta(1,'Luis',1234,2021,1000,'N/A');
 
 
 var cuentas =new Vue({
