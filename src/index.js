@@ -28,29 +28,6 @@ var app = new Vue({
         visible: false,
       }
     ],
-    foods: [
-      {
-        id: 1,
-        text: 'Burger',
-        img: 'https://cloudfront-us-east-1.images.arcpublishing.com/infobae/V2H33FRBZBB6FDSJLP2IDHLQYA.jpg',
-      },
-      {
-        id: 2,
-        text: 'Pizza',
-        img: 'https://w6h5a5r4.rocketcdn.me/wp-content/uploads/2019/06/pizza-con-chorizo-jamon-y-queso-1080x671.jpg',
-      },
-      {
-        id: 3,
-        text: 'Sushi',
-        img: 'https://www.eltiempo.com/files/image_640_428/uploads/2020/06/17/5eeac3162ff67.png',
-      },
-    ],
-    items: [
-      {
-        id: -1,
-        text: '',
-      },
-    ],
   },
   methods: {
     // Creating function
@@ -66,10 +43,53 @@ var app = new Vue({
         console.log(section.id + ' ' + section.visible)
       })
     },
-    addCarrito: function (text) {
-      this.items.push({
-        text: text,
-      })
-    },
   },
 })
+
+
+
+
+class Cuenta { constructor(ID,Nombre,Contraseña,Fecha,Dinero,desc1) {
+    this.ID = ID;
+    this.Nombre = Nombre;
+		this.Contraseña = Contraseña;
+		this.Fecha = Fecha;
+		this.Dinero = Dinero;
+    this.desc1 = desc1;
+  }
+							
+}
+
+let C1 = new Cuenta(1,'Luis',1234,2021,1000,'N/A');
+
+
+var cuentas =new Vue({
+  el: '#cuentas',
+  data: {reactive: true,
+    object: {
+      a: JSON.stringify(C1.Nombre),
+      b: JSON.stringify(C1.Fecha),
+      c: JSON.stringify(C1.Dinero),
+			d: JSON.stringify(C1.desc1)
+      }
+  }
+})
+
+function checkValue(usuario,contraseña, arr) {
+    var status = 'No hay cuenta';
+
+    for (var i = 0; i < arr.length; i++) {
+        var name = arr[i][2];
+			  var name2 = arr[i][3];
+			;
+        if (name == usuario) {
+            status = 'Exist';
+					  
+            break;
+        }
+    }
+
+    return status;
+}
+
+
