@@ -142,25 +142,25 @@
           Costo por envío: ---
           Total: Tu carrito está vacio, el total se calculará cuando agregues algo.
         </p>
-      </div>
-      <div v-for="food in foods" :key="food.id">
-        <div class="card" style="width: 18rem">
-          <img
-            class="card-img-top"
-            v-bind:src="food.img"
-            alt="Card image cap"
-          />
-          <div class="card-body">
-            <h5 class="card-title">{{ food.text }}</h5>
-            <p class="card-text">
-              Some quick example text to build on the card title and make up
-              the bulk of the card's content.
-            </p>
-            <a
-              class="btn btn-primary"
-              v-on:click="()=>addCarrito(food.text)"
-              >Add</a
-            >
+        <div v-for="food in foods" :key="food.id">
+          <div class="card" style="width: 18rem">
+            <img
+              class="card-img-top"
+              v-bind:src="food.img"
+              alt="Card image cap"
+            />
+            <div class="card-body">
+              <h5 class="card-title">{{ food.text }}</h5>
+              <p class="card-text">
+                Some quick example text to build on the card title and make up
+                the bulk of the card's content.
+              </p>
+              <a
+                class="btn btn-primary"
+                v-on:click="()=>addCarrito(food.text)"
+                >Add</a
+              >
+            </div>
           </div>
         </div>
       </div>
