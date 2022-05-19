@@ -1,7 +1,14 @@
+Vue.component('food-card', {
+  props: ['text', 'img'],
+  template:
+    '<div><article id="food"><img :src="img" :alt="food-card"/><div><h3>{{text}}</h3></div><button>ADD</button></artcile></div>',
+})
+
 var app = new Vue({
   el: '#app',
   data: {
-    img: [],
+    img: '',
+    foods: [],
     sections: [
       {
         id: 1,
@@ -26,7 +33,7 @@ var app = new Vue({
     ],
   },
   methods: {
-    // Creating function
+    // Creating functions
     show: function (id) {
       this.sections.forEach((section) => {
         if (section.id === id) {
@@ -36,19 +43,27 @@ var app = new Vue({
         }
       })
     },
+    addCarrito: function (text) {
+      this.items.push({
+        text: text,
+      })
+    },
     getFood: function () {
-      fetch(' https://spoonacular.com/recipeImages/')
-        .then((res) => {
-          return res.json()
-        })
-        .then((data) => {
-          this.img = data
-        })
-        .catch((err) => {
-          console.log(err)
-        })
-
-      console.log(this.img)
+      for (let i = 0; i < 10; i++) {
+        fetch('https://foodish-api.herokuapp.com/api/')
+          .then((res) => {
+            return res.json()
+          })
+          .then((data) => {
+            this.foods.push({
+              text: 'asjdh',
+              img: data.image,
+            })
+          })
+          .catch((err) => {
+            console.log(err)
+          })
+      }
     },
   },
 })
