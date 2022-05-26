@@ -4,33 +4,16 @@ Vue.component('food-card', {
     '<div><article id="food"><img :src="img" :alt="food-card"/><div><h3>{{text}}</h3></div><button>ADD</button></artcile></div>',
 })
 
+Vue.component('Navbar', {
+  template:
+    '<div class="row">     <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="navbar">       <a class="navbar-brand">EATFOOD</a>       <div class="collapse navbar-collapse" id="navbarSupportedContent">         <ul class="navbar-nav mr-auto">           <li class="nav-item active">             <a href="Menu.html"><h4 class="px-4">Home</h4></a>           </li>           <li class="nav-item active">             <a href="Account.html"><h4 class="px-4">Mi Cuenta</h4></a>           </li>           <li class="nav-item active">             <a href="Cart.html"><h4 class="px-4">Mi carrito</h4></a>           </li>           <li class="nav-item active">             <a href="About.html"><h4 class="px-4">Queines Somos</h4></a>           </li>         </ul>       </div>     </nav>   </div>',
+})
+
 var app = new Vue({
   el: '#app',
   data: {
     img: '',
     foods: [],
-    sections: [
-      {
-        id: 1,
-        name: 'Menu',
-        visible: true,
-      },
-      {
-        id: 2,
-        name: 'Mi Cuenta',
-        visible: false,
-      },
-      {
-        id: 3,
-        name: 'Mi carrito',
-        visible: false,
-      },
-      {
-        id: 4,
-        name: 'Quienes Somos',
-        visible: false,
-      },
-    ],
   },
   methods: {
     // Creating functions
@@ -66,4 +49,13 @@ var app = new Vue({
       }
     },
   },
+})
+
+var mysql = require('mysql')
+
+var conexion = mysql.createConnection({
+  host: 'localhost',
+  database: 'parcial2_a0826615',
+  user: 'root',
+  password: '',
 })
