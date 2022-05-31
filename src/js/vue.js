@@ -1,7 +1,39 @@
 Vue.component('food-card', {
   props: ['text', 'img'],
   template:
-    '<div><article id="food"><img :src="img" :alt="food-card"/><div><h3>{{text}}</h3></div><button>ADD</button></artcile></div>',
+    '<div ><img :src="img" :alt="food-card" style="height: 20vh; min-width: 50vh; object-fit: contain;"/><div><h3>{{text}}</h3></div><button>ADD</button></div>',
+})
+
+Vue.component('category-card', {
+  props: ['text', 'img'],
+  template:
+    '<div ><img :src="img" :alt="food-card" style="height: 20vh; min-width: 50vh; object-fit: contain;"/><div><h3>{{text}}</h3></div><button @click="getCategory(text)">Select</button></div>',
+  data: function () {
+    return {
+      foods: [],
+    }
+  },
+  methods: {
+    getCategory: function (text) {
+      for (let i = 0; i < 20; i++) {
+        fetch(`https://foodish-api.herokuapp.com/api/images/${text}`)
+          .then((res) => {
+            return res.json()
+          })
+          .then((data) => {
+            // this.foods.push({
+            //   text: text,
+            //   img: data.image,
+            // })
+            console.log(text)
+            console.log(data.image)
+          })
+          .catch((err) => {
+            console.log(err)
+          })
+      }
+    },
+  },
 })
 
 Vue.component('Navbar', {
@@ -12,8 +44,22 @@ Vue.component('Navbar', {
 var app = new Vue({
   el: '#app',
   data: {
-    img: '',
-    foods: [],
+    user: '',
+    passwrd: '',
+    users: [],
+    categories: [],
+    categories_name: [
+      'biryani',
+      'burger',
+      'butter-chicken',
+      'dessert',
+      'dosa',
+      'idly',
+      'pasta',
+      'pizza',
+      'rice',
+      'samosa',
+    ],
   },
   methods: {
     // Creating functions
@@ -31,15 +77,24 @@ var app = new Vue({
         text: text,
       })
     },
-    getFood: function () {
-      for (let i = 0; i < 10; i++) {
-        fetch('https://foodish-api.herokuapp.com/api/')
+    signup: function () {
+      this.users.push({
+        username: this.user,
+        password: this.passwrd,
+      })
+      console.log()
+    },
+    getCategories: function () {
+      for (let i = 0; i < this.categories_name.length; i++) {
+        fetch(
+          `https://foodish-api.herokuapp.com/api/images/${this.categories_name[i]}`
+        )
           .then((res) => {
             return res.json()
           })
           .then((data) => {
-            this.foods.push({
-              text: 'asjdh',
+            this.categories.push({
+              text: this.categories_name[i],
               img: data.image,
             })
           })
@@ -49,13 +104,11 @@ var app = new Vue({
       }
     },
   },
+  mounted: function () {
+    this.$nextTick(function () {
+      this.getCategories()
+    })
+  },
 })
 
-var mysql = require('mysql')
-
-var conexion = mysql.createConnection({
-  host: 'localhost',
-  database: 'parcial2_a0826615',
-  user: 'root',
-  password: '',
-})
+//!THINGS TO FIX RECIVE NAME OF CATEGORY THE FUNCTION IT'S NOT WORKING

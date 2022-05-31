@@ -17,9 +17,9 @@ conexion.connect(function (error) {
 
 //*INSERT
 //!Check THIS WITH VUE-MODEL
-function INSERT(value) {
+function INSERT(username, password) {
   conexion.query(
-    `INSERT INTO Alumnos(Nombre, Identificador, Email, Carrera) VALUES (${value},"A00826615","A00826615@tec.mx","ITC"),("Pedro", "A00826620","A00826620","IDM")`,
+    `INSERT INTO Alumnos(Username, Password) VALUES (${username},${password})`,
     function (error, results) {
       if (error) {
         throw error
