@@ -28,7 +28,9 @@ a:active {
   color: #000000;
   text-decoration: none;
 }
-
+#navbar {
+  background-color: var(--mainBackgorund);
+}
 #account {
   display: block;
   margin-left: auto;
