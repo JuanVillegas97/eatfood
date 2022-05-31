@@ -1,0 +1,74 @@
+:root {
+  --mainBackgorund: #deffca;
+  --secondaryBackground: #c7e5b5;
+  --tertiaryBackground: #859979;
+  --quaternaryBackground: #586650;
+  --row_Min-height: 95vh;
+  --navbar_Min-height: 5vh;
+}
+
+a:link,
+a:visited,
+a:hover,
+a:active {
+  color: #000000;
+  text-decoration: none;
+}
+
+#navbar {
+  background-color: var(--mainBackgorund);
+}
+
+#about-1-row {
+  min-height: var(--navbar_Min-height);
+}
+
+#row-1-about-us {
+  background-color: var(--secondaryBackground);
+  text-align: center;
+}
+
+#row-3-about-us {
+  background-color: var(--secondaryBackground);
+}
+
+#navbar {
+  background-color: var(--mainBackgorund);
+  color: white;
+}
+
+#title-aboutus {
+  color: var(--tertiaryBackground);
+  opacity: 0.6;
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: bold;
+}
+
+#text-aboutus {
+  color: black;
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: bold;
+  font-style: oblique;
+}
+
+#text-aboutusBLACK {
+  color: black;
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: bold;
+
+  font-style: oblique;
+}
+
+#logo {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#food {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  column-gap: 0.75rem;
+  margin-bottom: 2.5rem;
+  align-items: center;
+}
