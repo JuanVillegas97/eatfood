@@ -16,8 +16,8 @@
         <div class="row" id="home-2-row">
           <div><h3 id="home-title">Food should be with you forever</h3></div>
           <div class="input-group mb-3"  id="home-searchbar">
-            <input type="text" class="form-control" id="home-icon"  placeholder="Enter delivery address" >
-            <button class="btn btn-outline-secondary" type="button" id="home-btn">Find food</button>
+            <input type="text" class="form-control" id="home-icon" placeholder="Enter delivery address" >
+            <button class="btn btn-outline-secondary" type="button" id="home-btn" h-ref="#map" onclick="locGet(document.getElementById('home-icon').value); document.getElementById('map').scrollIntoView();">Find food</button>
           </div>
           <img src="images/salad-vector-non-veg-food-2.png" alt="Error" id="home-img"> 
         </div>
