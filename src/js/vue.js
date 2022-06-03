@@ -7,31 +7,75 @@ Vue.component('food-card', {
 Vue.component('category-card', {
   props: ['text', 'img'],
   template:
-    '<div ><img :src="img" :alt="food-card" style="height: 20vh; min-width: 50vh; object-fit: contain;"/><div><h3>{{text}}</h3></div><button @click="getCategory(text)">Select</button></div>',
+    '<div ><img :src="img" :alt="food-card" style="height: 20vh; min-width: 50vh; object-fit: contain;"/><div><h3>{{text}}</h3></div><button @click="getCategory(text)"><a href="#foods">SELECT</a></button></div>',
   data: function () {
     return {
       foods: [],
+      adjetives: [
+        'acceptable',
+        'agreeable',
+        'appetizing',
+        'attractive',
+        'delicious',
+        'enjoyable',
+        'pleasant',
+        'satisfactory',
+        'tempting',
+        'toothsome',
+        'A-OK',
+        'aperitive',
+        'cool',
+        'copacetic',
+        'delectable',
+        'delightful',
+        'divine',
+        'fair',
+        'flavorsome',
+        'heavenly',
+        'luscious',
+        'mellow',
+        'mouthwatering',
+        'peachy',
+        'relishing',
+        'sapid',
+        'saporific',
+        'saporous',
+        'savory',
+        'scrumptious',
+        'sugar-coated',
+        'sweetened',
+        'tasteful',
+        'tasty',
+        'toothy',
+        'yummy ',
+      ],
     }
   },
   methods: {
     getCategory: function (text) {
-      for (let i = 0; i < 20; i++) {
-        fetch(`https://foodish-api.herokuapp.com/api/images/${text}`)
+      const c = text.charAt(0).toLowerCase()
+      const d = text.slice(1)
+      for (let i = 0; i < 36; i++) {
+        fetch(`https://foodish-api.herokuapp.com/api/images/${c + d}`)
           .then((res) => {
             return res.json()
           })
           .then((data) => {
-            // this.foods.push({
-            //   text: text,
-            //   img: data.image,
-            // }
-            console.log(text)
-            console.log(data.image)
+            const a = this.adjetives[i].charAt(0).toUpperCase()
+            const b = this.adjetives[i].slice(1)
+            this.foods.push({
+              text: a + b + ' ' + text,
+              img: data.image,
+            })
           })
           .catch((err) => {
             console.log(err)
           })
       }
+      this.pushnewarray()
+    },
+    pushnewarray: function () {
+      this.$emit('pushnewarray', this.foods)
     },
   },
 })
@@ -46,7 +90,7 @@ var app = new Vue({
   data: {
     user: '',
     passwrd: '',
-    users: [],
+    foods: [],
     categories: [],
     categories_name: [
       'biryani',
@@ -93,8 +137,10 @@ var app = new Vue({
             return res.json()
           })
           .then((data) => {
+            const a = this.categories_name[i].charAt(0).toUpperCase()
+            const b = this.categories_name[i].slice(1)
             this.categories.push({
-              text: this.categories_name[i],
+              text: a + b,
               img: data.image,
             })
           })
@@ -102,6 +148,9 @@ var app = new Vue({
             console.log(err)
           })
       }
+    },
+    updateFoods: function (updatedFoods) {
+      this.foods = updatedFoods
     },
   },
   mounted: function () {

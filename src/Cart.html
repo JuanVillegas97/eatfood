@@ -19,6 +19,7 @@
           <h1>Categories</h1>
           <div class="flexbox-container">
           <category-card
+            v-on:pushnewarray="updateFoods($event)"
             class="flexbox-item"
             v-for="(category, index) in categories"
             :key="index"
@@ -28,7 +29,7 @@
           </div>
         </div>
         <hr>
-        <div class="row" style="min-height: 95vh">
+        <div class="row" style="min-height: 95vh" id="foods"> 
           <div class="flexbox-container">
             <food-card
             class="flexbox-item"
