@@ -38,7 +38,7 @@ Vue.component('category-card', {
 
 Vue.component('Navbar', {
   template:
-    '<div><nav class="navbar navbar-expand-lg navbar-light fixed-top" id="navbar"><a class="navbar-brand"><img src="images/Logo_dark-removebg-preview.png" width="200" height="38"     class="d-inline-block align-top" alt="ERROR" /></a> <div class="collapse navbar-collapse" id="navbarSupportedContent"><ul class="navbar-nav mr-auto"><li ><a href="Home.html"><h4 class="px-4">Home</h4></a></li><li ><a href="Account.html"><h4 class="px-4">Account</h4></a></li>   <li ><a href="Cart.html"><h4 class="px-4">My Cart</h4></a></li><li ><a href="About.html"><h4 class="px-4">About us</h4></a></li></ul></div></nav></div>',
+    '<div><nav class="navbar navbar-expand-lg navbar-light fixed-top" id="navbar"><a class="navbar-brand"><img src="images/Logo_dark-removebg-preview.png" width="200" height="38"     class="d-inline-block align-top" alt="ERROR" /></a> <div class="collapse navbar-collapse" id="navbarSupportedContent"><ul class="navbar-nav mr-auto"><li ><a href="Home.html"><h4 class="px-4">Home</h4></a></li><li ><a href="Account.html"><h4 class="px-4">Account</h4></a></li>   <li ><a href="Cart.html"><h4 class="px-4">My Cart</h4></a></li><li ><li ><a href="user.html"><h4 class="px-4">My Account</h4></a></li><a href="About.html"><h4 class="px-4">About us</h4></a></li></ul></div></nav></div>',
 })
 
 var app = new Vue({
