@@ -24,7 +24,7 @@ Vue.component('category-card', {
             // this.foods.push({
             //   text: text,
             //   img: data.image,
-            // })
+            // }
             console.log(text)
             console.log(data.image)
           })
