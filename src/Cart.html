@@ -13,31 +13,36 @@
     <div id="app">
       <!--*Container of the whole page-->
       <div class="container-fluid">
-        <div class="row" style="min-height: 5vh"><Navbar /></div>
-        <br><br><br><br>
-        <div class="row" style="min-height: 35vh">
-          <h1>Categories</h1>
-          <div class="flexbox-container">
-          <category-card
-            v-on:pushnewarray="updateFoods($event)"
-            class="flexbox-item"
-            v-for="(category, index) in categories"
-            :key="index"
-            :text="category.text"
-            :img="category.img">
-        </categroy-card>
+        <div class="row"><Navbar /></div>
+        <br /><br /><br /><br /><br /><br />
+        <h2 class="text-center">Categories</h2>
+        <br /><br /><br />
+        <div class="row">
+          <div class="flexbox-container-categories">
+            <category-card
+              v-on:pushnewarray="updateFoods($event)"
+              class="flexbox-item-categories"
+              v-for="(category, index) in categories"
+              :key="index"
+              :text="category.text"
+              :img="category.img"
+            />
           </div>
         </div>
-        <hr>
-        <div class="row" style="min-height: 95vh" id="foods"> 
+        <div class="row" id="foods">
           <div class="flexbox-container">
             <food-card
-            class="flexbox-item"
-            v-for="(food, index) in foods"
-            :key="index"
-            :text="food.text"
-            :img="food.img"/>
+              class="flexbox-item"
+              v-for="(food, index) in foods"
+              :key="index"
+              :text="food.text"
+              :img="food.img"
+              :description="food.description"
+              :price="food.price"
+            />
           </div>
+        </div>
+      </div>
     </div>
     <!--*Vue js-->
     <script src="js/vue.js"></script>

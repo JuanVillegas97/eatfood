@@ -1,13 +1,13 @@
 Vue.component('food-card', {
-  props: ['text', 'img'],
+  props: ['text', 'img', 'description', 'price'],
   template:
-    '<div ><img :src="img" :alt="food-card" style="height: 20vh; min-width: 50vh; object-fit: contain;"/><div><h3>{{text}}</h3></div><button>ADD</button></div>',
+    '<div ><img :src="img" :alt="food-card"/><h3>{{text}}</h3><p>{{description}}</p><h4>{{price}}$</h4><button class="button-17" role="button" >ADD</button></div>',
 })
 
 Vue.component('category-card', {
   props: ['text', 'img'],
   template:
-    '<div ><img :src="img" :alt="food-card" style="height: 20vh; min-width: 50vh; object-fit: contain;"/><div><h3>{{text}}</h3></div><button @click="getCategory(text)"><a href="#foods">SELECT</a></button></div>',
+    '<div ><img :src="img" :alt="food-card"/><div><h3>{{text}}</h3></div><button class="button-17" role="button" @click="getCategory(text)"><a href="#foods">SELECT</a></button></div>',
   data: function () {
     return {
       foods: [],
@@ -66,6 +66,9 @@ Vue.component('category-card', {
             this.foods.push({
               text: a + b + ' ' + text,
               img: data.image,
+              description:
+                'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua....',
+              price: Math.floor(Math.random() * (36 - 16)) + 16,
             })
           })
           .catch((err) => {
