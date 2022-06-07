@@ -1,7 +1,35 @@
+Vue.component('cart-item', {
+  props: ['text', 'img', 'price'],
+  template:
+    '<div ><img :src="img" :alt="food-card"/><h3>{{text}}</h3><h4>{{price}}$</h4><button class="button-17" role="button" @click="addCart(text, img, price)"  >ADD</button></div>',
+  data: function () {
+    return {}
+  },
+  methods: {},
+})
+
 Vue.component('food-card', {
   props: ['text', 'img', 'description', 'price'],
   template:
-    '<div ><img :src="img" :alt="food-card"/><h3>{{text}}</h3><p>{{description}}</p><h4>{{price}}$</h4><button class="button-17" role="button" >ADD</button></div>',
+    '<div ><img :src="img" :alt="food-card"/><h3>{{text}}</h3><p>{{description}}</p><h4>{{price}}$</h4><button class="button-17" role="button" @click="addCart(text, img, price)"  >ADD</button></div>',
+  data: function () {
+    return {
+      cart: [],
+    }
+  },
+  methods: {
+    addCart: function (text, img, price) {
+      this.cart.push({
+        text: text,
+        img: img,
+        price: price,
+      })
+      this.pushcart()
+    },
+    pushcart: function () {
+      this.$emit('pushcart', this.cart)
+    },
+  },
 })
 
 Vue.component('category-card', {
@@ -93,6 +121,7 @@ var app = new Vue({
   data: {
     user: '',
     passwrd: '',
+    carts: [],
     foods: [],
     categories: [],
     categories_name: [
@@ -125,11 +154,8 @@ var app = new Vue({
       })
     },
     signup: function () {
-      this.users.push({
-        username: this.user,
-        password: this.passwrd,
-      })
-      console.log()
+      console.log(this.user)
+      console.log(this.passwrd)
     },
     getCategories: function () {
       for (let i = 0; i < this.categories_name.length; i++) {
@@ -155,6 +181,9 @@ var app = new Vue({
     updateFoods: function (updatedFoods) {
       this.foods = updatedFoods
     },
+    updateCart: function (updatedCart) {
+      this.carts = updatedCart
+    },
   },
   mounted: function () {
     this.$nextTick(function () {
@@ -162,5 +191,3 @@ var app = new Vue({
     })
   },
 })
-
-//!THINGS TO FIX RECIVE NAME OF CATEGORY THE FUNCTION IT'S NOT WORKING
