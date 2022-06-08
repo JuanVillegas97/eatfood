@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>EatFood</title>
+    <link rel="stylesheet" href="css/Cart.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <!--*Container of the whole page-->
+      <div class="container-fluid">
+        <div class="row"><Navbar /></div>
+        <br /><br /><br /><br /><br /><br />
+        <h2 class="text-center">Categories</h2>
+        <br /><br /><br />
+        <div class="row">
+          <div class="flexbox-container-categories">
+            <category-card
+              v-on:pushnewarray="updateFoods($event)"
+              class="flexbox-item-categories"
+              v-for="(category, index) in categories"
+              :key="index"
+              :text="category.text"
+              :img="category.img"
+            />
+          </div>
+        </div>
+        <div class="row" id="foods">
+          <div class="flexbox-container">
+            <food-card
+              class="flexbox-item"
+              v-for="(food, index) in foods"
+              :key="index"
+              :text="food.text"
+              :img="food.img"
+              :description="food.description"
+              :price="food.price"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--*Vue js-->
+    <script src="js/vue.js"></script>
+  </body>
+</html>
