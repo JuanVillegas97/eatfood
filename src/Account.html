@@ -16,14 +16,33 @@
         <div class="row" style="min-height: 5vh">
           <Navbar />
         </div>
+        <br /><br />
+        <div class="row" style="min-height: 5vh" id="login23">
+          <div class="col">
+            <h1 id="logtext">Food needs to know where to go</h1>
+            <hr />
+            <h4 id="logtext4">Please log in or sign up with an option below</h4>
+          </div>
+        </div>
         <div class="row" style="min-height: 95vh" id="account">
           <div>
             <br /><br /><br /><br />
+            <h4 id="logtext1">Username</h4>
             <input type="text" v-model="user" /><br />
+            <br /><br />
+            <h4 id="logtext1">Password</h4>
             <input type="text" v-model="passwrd" /><br />
-            <button @click="signup">Sign up</button>
-            <!-- Scrollable modal -->
-            <!-- <button><a href="./login.html" class="button">Login</a></button> -->
+            <hr />
+          </div>
+          <div class="but">
+            <button class="nav-link" onclick="location.href='user.html'">
+              login
+            </button>
+          </div>
+          <div class="but">
+            <button class="nav-link" onclick="location.href='signup.html'">
+              Signup
+            </button>
           </div>
         </div>
       </div>

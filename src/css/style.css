@@ -70,6 +70,26 @@ a:active {
 #food:hover {
   box-shadow: var(--darkShadow);
 }
+#app{
+  background-color: #deffcad8;
+}
+#logtext{
+  font-size: 2rem;
+  text-transform: capitalize;
+  text-align: left;
+  letter-spacing: var(--mainSpacing);
+}
+#logtext4{
+  font-size: 1rem;
+  text-transform: capitalize;
+  text-align: left;
+  letter-spacing: var(--mainSpacing);
+}
+#logtext1{
+  font-size: 1rem;
+  text-transform: capitalize;
+  letter-spacing: var(--mainSpacing);
+}
 #food img {
   height: 20rem;
   object-fit: cover;
