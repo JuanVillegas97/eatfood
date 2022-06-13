@@ -73,7 +73,7 @@
         <div class="row" id="foods">
           <div class="flexbox-container">
             <food-card
-              v-on:pushcart="updateCart($event)"
+              v-on:pushcart="updateCart"
               class="flexbox-item"
               v-for="(food, index) in foods"
               :key="index"

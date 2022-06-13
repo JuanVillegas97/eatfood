@@ -1,7 +1,7 @@
 Vue.component('cart-item', {
-  props: ['text', 'img', 'price'],
+  props: ['text', 'price'],
   template:
-    '<div ><img :src="img" :alt="food-card"/><h3>{{text}}</h3><h4>{{price}}$</h4><button class="button-17" role="button" @click="addCart(text, img, price)"  >ADD</button></div>',
+    '<div ><div class="child"><h5>{{text}}</h5></div><div class="child"><h5>{{price}}$</h5></div><div class="child"><button class="button-17" role="button" @click="addCart(text, price)"  >ADD</button></div></div>',
   data: function () {
     return {}
   },
@@ -11,23 +11,15 @@ Vue.component('cart-item', {
 Vue.component('food-card', {
   props: ['text', 'img', 'description', 'price'],
   template:
-    '<div ><img :src="img" :alt="food-card"/><h3>{{text}}</h3><p>{{description}}</p><h4>{{price}}$</h4><button class="button-17" role="button" @click="addCart(text, img, price)"  >ADD</button></div>',
+    '<div ><img :src="img" :alt="food-card"/><h3>{{text}}</h3><p>{{description}}</p><h4>{{price}}$</h4><button class="button-17" role="button" @click="pushcart(text, price)"  >ADD</button></div>',
   data: function () {
     return {
       cart: [],
     }
   },
   methods: {
-    addCart: function (text, img, price) {
-      this.cart.push({
-        text: text,
-        img: img,
-        price: price,
-      })
-      this.pushcart()
-    },
-    pushcart: function () {
-      this.$emit('pushcart', this.cart)
+    pushcart: function (text, price) {
+      this.$emit('pushcart', { text: text, price: price })
     },
   },
 })
@@ -181,8 +173,11 @@ var app = new Vue({
     updateFoods: function (updatedFoods) {
       this.foods = updatedFoods
     },
-    updateCart: function (updatedCart) {
-      this.carts = updatedCart
+    updateCart: function ({ text, price }) {
+      this.carts.push({
+        text: text,
+        price: price,
+      })
     },
   },
   mounted: function () {
