@@ -1,5 +1,3 @@
-import { getUser, updateUser } from './firebase.js'
-
 Vue.component('cart-item', {
   props: ['text', 'price'],
   template:
@@ -120,7 +118,7 @@ Vue.component('Navbar', {
           <li ><a href="Cart.html"><h4 class="px-4">Food</h4></a></li>
           <li ><a href="About.html"><h4 class="px-4">About us</h4></a></li>
           <li ><a href="user.html"><h4 class="px-4">My Account</h4></a></li>
-          <li ><a href="Account.html"><h4 class="px-4">Login</h4></a></li>
+          <li ><a href="Account.html"><h4 class="px-4">Log in</h4></a></li>
         </ul>
       </div>
     </nav>
