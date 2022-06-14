@@ -42,6 +42,7 @@
         <div class="cart-container">
           <cart-item
           class="cart-item"
+              v-on:deleteitem="updateItems($event)"
               v-for="(cart, index) in carts"
               :key="index"
               :text="cart.text"
@@ -53,6 +54,7 @@
 
       <!-- Modal footer -->
       <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Pay</button>
         <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
       </div>
 

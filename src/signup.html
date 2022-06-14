@@ -14,34 +14,43 @@
       <!--*Container of the whole page-->
       <div class="container-fluid">
         <div class="row" style="min-height: 5vh">
-            <Navbar />
-          </div>
-          <br /><br />
+          <Navbar />
+        </div>
+        <br /><br />
         <div class="row" style="min-height: 5vh" id="login23">
-            <div class="col">
+          <div class="col">
             <h1 id="logtext">Sign up</h1>
-            <hr>
-            <h4 id="logtext4">Please enter the data required below to get you ready to Eatfood</h4>
-            </div>
+            <hr />
+            <h4 id="logtext4">
+              Please enter the data required below to get you ready to Eatfood
+            </h4>
           </div>
-          <div class="row" style="min-height: 95vh" id="account">
-            <div>
-              <br /><br /><br /><br />
-              <h4 id="logtext1">Username</h4>
-              <input type="text" v-model="user" /><br />
-              <h4 id ="logtext1">Password</h4>
-              <input type="text" v-model="passwrd" /><br />
-              <h4 id ="logtext1">Email</h4>
-              <input type="text" v-model="mail" /><br />
-              <hr>
-            </div>
-            <div class="but">
-              <button class="nav-link" onclick="location.href='Account.html'">Continue</button>
-            </div>
+        </div>
+        <div class="row" style="min-height: 95vh" id="account">
+          <div>
+            <br /><br /><br /><br />
+            <!--Here I do start -->
+            <form id="users-form">
+              <div id="users-announcement"></div>
+              <label for="username">Username</label>
+              <input type="text" id="users-username" />
+              <br />
+              <br />
+              <label for="password">Password</label>
+              <input type="text" id="users-password" />
+              <br />
+              <br />
+              <label for="email">Email</label>
+              <input type="text" for="email" id="users-email" /><br />
+              <hr />
+              <button id="btn-users-form">Continue</button>
+            </form>
           </div>
+        </div>
       </div>
     </div>
     <!--*Vue js-->
+    <script src="js/signup.js" type="module"></script>
     <script src="js/vue.js"></script>
   </body>
 </html>
