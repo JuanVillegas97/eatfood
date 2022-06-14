@@ -1,3 +1,5 @@
+import { getUser, updateUser } from './firebase.js'
+
 Vue.component('cart-item', {
   props: ['text', 'price'],
   template:
@@ -187,6 +189,20 @@ var app = new Vue({
             console.log(err)
           })
       }
+    },
+    UploadOrders: function () {
+      const paybtn = document.getElementById('pay-btn')
+      paybtn.addEventListener('click', () =>
+        this.carts.forEach((cart) => {
+          console.log(cart.text)
+        })
+      )
+      // const username = usersForm['users-username']
+      // const password = usersForm['users-password']
+      // const email = usersForm['users-email']
+      // saveUser(username.value, password.value, email.value)
+      // userAnnouncement.innerHTML = `<div><h4>Your user has been created, please go to login</h4></div><br /><br />`
+      // usersForm.reset()
     },
     updateItems: function (text) {
       this.carts = this.carts.filter((cart) => cart.text !== text)

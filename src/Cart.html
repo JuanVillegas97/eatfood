@@ -54,7 +54,7 @@
 
       <!-- Modal footer -->
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Pay</button>
+        <button id="pay-btn" type="button" class="btn btn-primary" @click="UploadOrders()">Pay</button>
         <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
       </div>
 
@@ -89,6 +89,6 @@
       </div>
     </div>
     <!--*Vue js-->
-    <script src="js/vue.js"></script>
+    <script src="js/vue.js" type="module"></script>
   </body>
 </html>

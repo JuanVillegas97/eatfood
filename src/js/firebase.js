@@ -36,8 +36,8 @@ export const onGetUsers = (callback) =>
 export const deleteTask = (id) => deleteDoc(doc(db, 'users', id))
 
 //*Creamos una funcion que regresa un documento dentro de nuestra coleccion
-export const getTask = (id) => getDoc(doc(db, 'users', id))
+export const getUser = (id) => getDoc(doc(db, 'users', id))
 
 //*Creamos una funcion que actualiza un documento dentro de nuestra coleccion
-export const updateTask = (id, newFields) =>
+export const updateUser = (id, newFields) =>
   updateDoc(doc(db, 'users', id), newFields)
