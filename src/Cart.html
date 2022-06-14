@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>EatFood</title>
+    <link rel="stylesheet" href="css/Cart.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <!--*Container of the whole page-->
+      <div class="container-fluid">
+        <div class="row"><Navbar /></div>
+        <br /><br /><br /><br /><br /><br />
+        <h2 class="text-center">Categories</h2>
+        <br /><br /><br />
+        </div>
+        <div class="row">
+          <div>
+<div class="container mt-3">
+  <button id="btn-list" type="button" class="button-17" role="button" data-bs-toggle="modal" data-bs-target="#myModal">
+    View cart
+  </button>
+</div>
+
+<!-- The Modal -->
+<div class="modal" id="myModal">
+  <div class="modal-dialog modal-dialog-scrollable">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">Checkout</h4>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <!-- Modal body -->
+      <div class="modal-body">
+        <div class="cart-container">
+          <cart-item
+          class="cart-item"
+              v-on:deleteitem="updateItems($event)"
+              v-for="(cart, index) in carts"
+              :key="index"
+              :text="cart.text"
+              :img="cart.img"
+              :price="cart.price"
+            />
+        </div>
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button id="pay-btn" type="button" class="btn btn-primary" @click="UploadOrders()">Pay</button>
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+      </div>
+
+    </div>
+  </div>
+</div></div>
+          <div class="flexbox-container-categories">
+            <category-card
+              v-on:pushnewarray="updateFoods($event)"
+              class="flexbox-item-categories"
+              v-for="(category, index) in categories"
+              :key="index"
+              :text="category.text"
+              :img="category.img"
+            />
+          </div>
+        </div>
+        <div class="row" id="foods">
+          <div class="flexbox-container">
+            <food-card
+              v-on:pushcart="updateCart"
+              class="flexbox-item"
+              v-for="(food, index) in foods"
+              :key="index"
+              :text="food.text"
+              :img="food.img"
+              :description="food.description"
+              :price="food.price"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--*Vue js-->
+    <script src="js/vue.js"></script>
+  </body>
+</html>

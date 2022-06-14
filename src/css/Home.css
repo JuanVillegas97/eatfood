@@ -1,0 +1,91 @@
+:root {
+  --mainBackgorund: #deffca;
+  --secondaryBackground: #c7e5b5;
+  --row_Min-height: 95vh;
+  --navbar_Min-height: 5vh;
+}
+
+a:link,
+a:visited,
+a:hover,
+a:active {
+  color: #000000;
+  text-decoration: none;
+}
+
+#navbar {
+  background-color: var(--mainBackgorund);
+}
+
+#home-1-row {
+  min-height: var(--navbar_Min-height);
+}
+
+#home-2-row {
+  min-height: var(--row_Min-height);
+  background-color: var(--mainBackgorund);
+}
+
+#home-3-row {
+  min-height: var(--row_Min-height);
+}
+
+#home-img {
+  max-width: 100vh;
+  position: absolute;
+  right: 0%;
+  bottom: 0px;
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+#home-searchbar {
+  padding: 12px 20px;
+  max-width: 100vh;
+  height: 11vh;
+  top: 40vh;
+  left: 5vh;
+  position: absolute;
+  box-sizing: border-box;
+  resize: none;
+}
+
+#home-btn {
+  background-color: var(--secondaryBackground);
+  color: black;
+}
+
+#home-icon {
+  padding-left: 25px;
+  background: url('https://www.freeiconspng.com/thumbs/location-icon-png/location-icon-24.png')
+    no-repeat left;
+  background-color: white;
+  background-size: 30px;
+}
+
+#home-title {
+  font-weight: bold;
+  font-style: normal;
+  position: absolute;
+  top: 35vh;
+  left: 8vh;
+}
+
+#home-country-title {
+  font-weight: bold;
+  font-style: normal;
+  text-align: center;
+}
+
+#flags {
+  padding: 12vh;
+  width: 65vh;
+  height: 80vh;
+  border: #000000;
+  border-radius: 25%;
+}
+
+#map {
+  height: 800px;
+  width: 100%;
+}
